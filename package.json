@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "echo 'No build step necessary'" // Dummy build step
+    "build": "echo 'No build step necessary'"
   },
   "dependencies": {
     "axios": "^0.21.1",
