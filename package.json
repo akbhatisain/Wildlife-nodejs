@@ -4,7 +4,8 @@
   "description": "A simple wildlife information app using Node.js and Express",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "echo 'No build step necessary'" // Dummy build step
   },
   "dependencies": {
     "axios": "^0.21.1",
