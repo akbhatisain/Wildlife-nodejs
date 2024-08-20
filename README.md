@@ -8,24 +8,8 @@ A simple Node.js web application that you can deploy using AWS Amplify. This app
 3. Basic Understanding with NPM.
 
 # amplify.yml
-version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm install
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: public
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+This is the configuration file that AWS Amplify uses to build and deploy your app.
 
-******************************************
 # Steps to Deploy on AWS Amplify
 1. Set Up Git Repository: Ensure your project is a Git repository. If not, initialize one.
    
