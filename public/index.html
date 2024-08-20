@@ -11,36 +11,33 @@
             margin: 50px;
         }
         img {
-            max-width: 400px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            max-width: 300px;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
     <h1>Random Wildlife Information</h1>
     <button onclick="fetchAnimal()">Get a Random Animal</button>
-    <div id="animal-info">
-        <h2 id="animal-name"></h2>
-        <img id="animal-image" src="" alt="Animal Image">
-        <p id="animal-habitat"></p>
-    </div>
+    <h2 id="animal-name"></h2>
+    <img id="animal-image" src="" alt="" />
+    <p id="animal-habitat"></p>
 
     <script>
         async function fetchAnimal() {
-            const response = await fetch('/api/animal');
-            const data = await response.json();
-            document.getElementById('animal-name').textContent = data.name;
-            document.getElementById('animal-image').src = data.image_link;
-            document.getElementById('animal-habitat').textContent = `Habitat: ${data.habitat}`;
+            try {
+                const response = await fetch('/api/animal');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                document.getElementById('animal-name').textContent = data.name;
+                document.getElementById('animal-image').src = data.image_link;
+                document.getElementById('animal-habitat').textContent = `Habitat: ${data.habitat}`;
+            } catch (error) {
+                console.error('Error fetching animal:', error);  // Log the error to the console
+                alert('Failed to load animal information. Please try again later.');
+            }
         }
     </script>
 </body>
