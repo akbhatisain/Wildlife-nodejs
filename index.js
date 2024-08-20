@@ -12,9 +12,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/animal', async (req, res) => {
     try {
         const response = await axios.get('https://zoo-animal-api.herokuapp.com/animals/rand');
+        console.log('API response:', response.data); // Log the response for debugging
         res.json(response.data);
     } catch (error) {
-        res.status(500).send('Error fetching wildlife information');
+        console.error('Error fetching wildlife information:', error); // Log the error
+        res.status(500).json({ error: 'Failed to fetch wildlife information' });
     }
 });
 
