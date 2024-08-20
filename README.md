@@ -18,9 +18,13 @@ This is the configuration file that AWS Amplify uses to build and deploy your ap
 3. Deploy Using AWS Amplify:
 
 Go to the AWS Amplify Console.
+
 Click Get Started under "Deploy".
+
 Connect your Git repository.
+
 Select the branch containing your code.
+
 AWS Amplify will automatically detect the amplify.yml file and use it to build and deploy your app.
 
 4. Access Your Deployed App:
